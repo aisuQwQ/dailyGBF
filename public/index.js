@@ -1,49 +1,77 @@
 const url='https://game.granbluefantasy.jp/#quest/supporter';
+import { questList } from "./list.js";
+
+let quests=questList;
+//Add EventListener
+for(let i=0; i<quests.length; ++i) {
+    const q=quests[i];
+    document.getElementById(q.name).addEventListener('click', (el)=>openTab(q.id, el, i));
+}
 
 
-//select
-let openMethod=0;
-const selectMethod=document.querySelector('#openMethod div');
-document.querySelector('#openMethod select').addEventListener('change', (el)=>{
-    openMethod=el.target.selectedIndex;
-    selectMethod.innerText=el.target.options[openMethod].text;
-});
+function init() {
+    loadLS();
+    setStatus();
 
-//reset
-document.getElementById('reset').addEventListener('click', ()=>{
+    openMethod=localStorage.getItem('openMethod')|0;
+    selectMethod.innerText=options[openMethod].text;
+    options[openMethod].selected=true;
+}
+
+
+//strage
+function loadLS() {
+    if(localStorage.quests==undefined) { //first visit
+        const json=JSON.stringify(questList);
+        localStorage.setItem('quests', json)
+    } else {
+        const json=localStorage.getItem('quests');
+        quests=JSON.parse(json);
+    }
+}
+function setLS() {
+    const json=JSON.stringify(quests);
+    localStorage.setItem('quests', json);
+}
+
+function setStatus() {
     document.querySelectorAll('.done').forEach((el)=>{
         el.classList.remove('done');
     });
     document.querySelectorAll('.once').forEach((el)=>{
         el.classList.remove('once');
-        el.classList.add('twice');
     });
+    const buttons=document.querySelectorAll('.dif button');
+    for(let i=0; i<buttons.length; i++) {
+        if (quests[i].remain==1) {
+            buttons[i].classList.add('once');
+        } else if (quests[i].remain==0) {
+            buttons[i].classList.add('done');
+            buttons[i].classList.add('once');
+        }
+    }
+}
+
+//select
+let openMethod=0;
+const selectMethod=document.querySelector('#openMethod div');
+const options=document.querySelectorAll('#openMethod option');
+document.querySelector('#openMethod select').addEventListener('change', (el)=>{
+    openMethod=el.target.selectedIndex;
+    selectMethod.innerText=options[openMethod].text;
+    localStorage.setItem('openMethod', openMethod);
 });
 
-// document.getElementById('').addEventListener('click', (el)=>openTab('', el));
-document.getElementById('atum').addEventListener('click', (el)=>openTab('/305321/1/0/41', el));
-document.getElementById('tefnut').addEventListener('click', (el)=>openTab('/305331/1/0/42', el));
-document.getElementById('bennu').addEventListener('click', (el)=>openTab('/305341/1/0/43', el));
-document.getElementById('ra').addEventListener('click', (el)=>openTab('/305351/1/0/44', el));
-document.getElementById('horus').addEventListener('click', (el)=>openTab('/305361/1/0/45', el));
-document.getElementById('osiris').addEventListener('click', (el)=>openTab('/305371/1/0/46', el));
-
-document.getElementById('wilnas').addEventListener('click', (el)=>openTab('/305191/1/0/41', el));
-document.getElementById('wamdus').addEventListener('click', (el)=>openTab('/305201/1/0/42', el));
-document.getElementById('galleon').addEventListener('click', (el)=>openTab('/305211/1/0/43', el));
-document.getElementById('ewiyar').addEventListener('click', (el)=>openTab('/305221/1/0/44', el));
-document.getElementById('luwoh').addEventListener('click', (el)=>openTab('/305231/1/0/45', el));
-document.getElementById('fediel').addEventListener('click', (el)=>openTab('/305241/1/0/46', el));
-
-
-document.getElementById('tuyo').addEventListener('click', (el)=>openTab('/301061/1/0/59', el));
-document.getElementById('akasha').addEventListener('click', (el)=>openTab('/303251/1/0/533',el));
-document.getElementById('grande').addEventListener('click', (el)=>openTab('/305161/1/0/83',el));
-document.getElementById('ult').addEventListener('click', (el)=>openTab('/303141/1/0/136',el));
-
+//reset
+document.getElementById('reset').addEventListener('click', ()=>{
+    quests=questList;
+    console.log(quests);
+    setStatus();
+    setLS();
+});
 
 let tab;
-function openTab(id, el) {
+function openTab(id, el, number) {
     if(tab) {
         tab.close();
     }
@@ -53,13 +81,15 @@ function openTab(id, el) {
         location.href=url+id;
     }
 
-    if(el.target.classList.contains('twice')) {
-        el.target.classList.remove('twice');
+    const q=quests[number];
+    if(q.remain==2) {
+        q.remain--;
         el.target.classList.add('once');
-    } else {
+    } else if(q.remain==1){
+        q.remain--;
         el.target.classList.add('done');
     }
-
+    setLS();
 }
 
 //can play 2 times
@@ -76,3 +106,5 @@ document.querySelectorAll('.twice').forEach((el)=>{
 document.querySelectorAll('button').forEach((el)=>{
     el.ontouchstart=()=>{};
 })
+
+init();
