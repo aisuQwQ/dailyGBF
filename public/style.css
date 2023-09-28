@@ -63,7 +63,7 @@ button {
 }
 
 button:hover {
-    filter: sepia(60%);
+    filter: brightness(120%);
     cursor: pointer;
 }
 button:active {
