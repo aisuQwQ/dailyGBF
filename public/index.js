@@ -76,7 +76,7 @@ function openTab(id, el, number) {
         tab.close();
     }
     if(openMethod==0) {
-        tab=open(url+id);
+        tab=open(url+id, 'gbf');
     } else if (openMethod==1) {
         location.href=url+id;
     }
