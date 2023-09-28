@@ -1,7 +1,7 @@
 const url='https://game.granbluefantasy.jp/#quest/supporter';
 import { questList } from "./list.js";
 
-let quests=questList;
+let quests=JSON.parse(JSON.stringify(questList));
 //Add EventListener
 for(let i=0; i<quests.length; ++i) {
     const q=quests[i];
@@ -64,8 +64,7 @@ document.querySelector('#openMethod select').addEventListener('change', (el)=>{
 
 //reset
 document.getElementById('reset').addEventListener('click', ()=>{
-    quests=questList;
-    console.log(quests);
+    quests=JSON.parse(JSON.stringify(questList));
     setStatus();
     setLS();
 });
