@@ -1,19 +1,25 @@
 body {
-    width: max-content;
+    width: 100vw;
     margin: auto;
     margin-top: 5px;
     font-family: basic;
+    position: fixed;
 }
 
 #body {
+    height: calc(100vh - 40px);
     display: flex;
     flex-direction: row;
     align-self: center;
+    position: relative;
+    overflow-x: auto;
 }
 
 #head {
-    width: auto;
+    position: relative;
+    width: 100vw;
     display: flex;
+    left: 0;
 }
 #openMethod {
     background-image: url(https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img/sp/ui/button-s92326793c2.png);
@@ -90,6 +96,11 @@ button:active {
     right: 0;
     margin-left: auto;
 }
+@media screen and (min-width: 400px) {
+    #reset {
+        margin-left: 170px;
+    }
+}
 
 /* ii-2 */
 .twiceFlag {
@@ -160,4 +171,23 @@ button:active {
 }
 #ult {
     background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040223000_high.png);
+}
+
+#島HARD {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2030000000_hard.png);
+}
+#マグナ {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040020000_ex.png);
+}
+#マグナHL {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040020000_high.png);
+}
+#プライマル {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040021000_ex.png);
+}
+#討滅戦 {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/quest/assets/2040016000_maniac.png);
+}
+#撃滅戦 {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/quest/assets/2040194000_maniac.png);
 }
