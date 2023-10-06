@@ -18,6 +18,13 @@ export const questList=[
     {remain:1,name:'akasha',id:'/303251/1/0/533'},
     {remain:1,name:'grande',id:'/305161/1/0/83'},
     {remain:1,name:'ult',id:'/303141/1/0/136'},
+    //pro
+    {remain:1,name:'島HARD',id:'/305261/28'},
+    {remain:1,name:'マグナ',id:'/305441/28'},
+    {remain:1,name:'マグナHL',id:'/305461/28'},
+    {remain:1,name:'プライマル',id:'/305471/28'},
+    {remain:1,name:'討滅戦',id:'/103951/28'},
+    {remain:1,name:'撃滅戦',id:'/103991/28'}
 
 ]
 // {remain:1,name:,id:}
