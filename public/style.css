@@ -11,7 +11,7 @@ body {
     flex-direction: row;
     align-self: center;
     position: relative;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 #head {
