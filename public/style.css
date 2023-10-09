@@ -1,7 +1,8 @@
 body {
     width: 100vw;
+    height: calc(100vh - 68px);
     margin: auto;
-    margin-top: 5px;
+    margin-top: 10px;
     font-family: basic;
     position: fixed;
 }
@@ -12,14 +13,21 @@ body {
     flex-direction: row;
     align-self: center;
     position: relative;
+    top: -40px;
     overflow-x: auto;
+    border-image: url(https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/ui/module/bg.png?1511244036) 74 17 fill;
+    border-width: 50px 17px;
+    border-style: solid;
+    z-index: -1;
+    max-width: max-content;
+    max-height: calc(100vh - 100px);
 }
 
 #head {
     position: relative;
     width: 100vw;
     display: flex;
-    left: 0;
+    left: 10px;
 }
 #openMethod {
     background-image: url(https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img/sp/ui/button-s92326793c2.png);
@@ -29,6 +37,8 @@ body {
     height: 33px;
     color: aliceblue;
     position: relative;
+    left: 12px;
+    top: 3px;
 }
 #openMethod div {
     text-align: -webkit-center;
@@ -60,7 +70,6 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aquamarine;
     margin: 1px;
     padding: 3px;
     border-radius: 3px;
@@ -93,12 +102,13 @@ button:active {
     background-position: 0 -2453px;
     background-size: 303px 2780px;
     position: relative;
-    right: 0;
+    right: 30px;
+    top: 4px;
     margin-left: auto;
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 435px) {
     #reset {
-        margin-left: 170px;
+        margin-left: 200px;
     }
 }
 
