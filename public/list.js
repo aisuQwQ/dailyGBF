@@ -20,9 +20,9 @@ export const questList=[
     {remain:1,name:'ult',id:'/303141/1/0/136'},
     //pro
     {remain:1,name:'島HARD',id:'/305261/28'},
-    {remain:1,name:'マグナ',id:'/305441/28'},
-    {remain:1,name:'マグナHL',id:'/305461/28'},
-    {remain:1,name:'プライマル',id:'/305471/28'},
+    {remain:1,name:'マグナ',id:'/305441/28/0/18'},
+    {remain:1,name:'マグナHL',id:'/305461/28/0/32'},
+    {remain:1,name:'プライマル',id:'/305471/28/0/47'},
     {remain:1,name:'討滅戦',id:'/103951/28'},
     {remain:1,name:'撃滅戦',id:'/103991/28'}
 
