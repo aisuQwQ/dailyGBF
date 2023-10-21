@@ -15,7 +15,8 @@ body {
     position: relative;
     top: -40px;
     overflow-x: auto;
-    border-image: url(https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/ui/module/bg.png?1511244036) 74 17 fill;
+    border-image: url(https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/ui/module/bg.png?1511244036)
+        74 17 fill;
     border-width: 50px 17px;
     border-style: solid;
     z-index: -1;
@@ -106,9 +107,9 @@ button:active {
     top: 4px;
     margin-left: auto;
 }
-@media screen and (min-width: 435px) {
+@media screen and (min-width: 535px) {
     #reset {
-        margin-left: 200px;
+        margin-left: 300px;
     }
 }
 
@@ -128,8 +129,6 @@ button:active {
 .once .twiceFlag {
     background-position: -5px -765px;
 }
-
-
 
 #atum {
     background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900008000_high.png);
@@ -173,7 +172,7 @@ button:active {
 #tuyo {
     background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040128000_hell.png);
 }
-#akasha{
+#akasha {
     background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040308000_high.png);
 }
 #grande {
@@ -181,6 +180,25 @@ button:active {
 }
 #ult {
     background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040223000_high.png);
+}
+/* viii */
+#mugen {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900012000_high.png);
+}
+#diaspora {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900011000_high.png);
+}
+#siegfried {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900015000_high.png);
+}
+#seofon {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900017000_high.png);
+}
+#cosmos {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900018000_high.png);
+}
+#agastia {
+    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900016000_high.png);
 }
 
 #島HARD {
