@@ -2,11 +2,11 @@ body {
     width: 100vw;
     height: calc(100vh - 68px);
     margin: auto;
-    margin-top: 10px;
+    margin-top: 7px;
     font-family: basic;
     position: fixed;
+    background-color: #150f0f;
 }
-
 #body {
     height: calc(100vh - 40px);
     display: flex;
@@ -22,6 +22,15 @@ body {
     z-index: -1;
     max-width: max-content;
     max-height: calc(100vh - 100px);
+    background: linear-gradient(
+        180deg,
+        #88aeb7 0%,
+        #b8d0d3 5%,
+        #88aeb7 20%,
+        #88aeb7 80%,
+        #b8d0d3 95%,
+        #88aeb7 100%
+    );
 }
 
 #head {
