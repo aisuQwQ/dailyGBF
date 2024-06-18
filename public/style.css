@@ -15,22 +15,13 @@ body {
     position: relative;
     top: -40px;
     overflow-x: auto;
-    border-image: url(https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/ui/module/bg.png?1511244036)
-        74 17 fill;
+    border-image: url(https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/ui/module/bg.png?1511244036) 74 17 fill;
     border-width: 50px 17px;
     border-style: solid;
     z-index: -1;
     max-width: max-content;
     max-height: calc(100vh - 100px);
-    background: linear-gradient(
-        180deg,
-        #88aeb7 0%,
-        #b8d0d3 5%,
-        #88aeb7 20%,
-        #88aeb7 80%,
-        #b8d0d3 95%,
-        #88aeb7 100%
-    );
+    background: linear-gradient(180deg, #88aeb7 0%, #b8d0d3 5%, #88aeb7 20%, #88aeb7 80%, #b8d0d3 95%, #88aeb7 100%);
 }
 
 #head {
@@ -227,4 +218,11 @@ button:active {
 }
 #撃滅戦 {
     background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/quest/assets/2040194000_maniac.png);
+}
+
+ad {
+    font-family: basic;
+    position: absolute;
+    bottom: 0;
+    z-index: -100;
 }
