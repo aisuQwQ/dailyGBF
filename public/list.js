@@ -6,6 +6,13 @@ export const questList = [
     { remain: 2, name: "ra", id: "/305351/1/0/44" },
     { remain: 2, name: "horus", id: "/305361/1/0/45" },
     { remain: 2, name: "osiris", id: "/305371/1/0/46" },
+    //マグナ3
+    { remain: 1, name: "aura", id: "/305601/1/0/525" },
+    { remain: 1, name: "ira", id: "/305611/1/0/522" },
+    { remain: 1, name: "mare", id: "/305631/1/0/523" },
+    { remain: 1, name: "arbos", id: "/305641/1/0/526" },
+    { remain: 1, name: "credo", id: "/305591/1/0/524" },
+    { remain: 1, name: "ater", id: "/305621/1/0/527" },
     //六龍
     { remain: 1, name: "wilnas", id: "/305191/1/0/41" },
     { remain: 1, name: "wamdus", id: "/305201/1/0/42" },
