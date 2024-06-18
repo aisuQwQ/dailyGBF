@@ -3,12 +3,12 @@ import { questList } from "./list.js";
 
 let quests = JSON.parse(JSON.stringify(questList));
 //Add EventListener
-for (let i = 0; i < quests.length; ++i) {
-    const q = quests[i];
-    document
-        .getElementById(q.name)
-        .addEventListener("click", (el) => openTab(q.id, el, i));
-}
+quests.forEach((q, index) => {
+    const dom = document.getElementById(q.name);
+
+    dom.addEventListener("click", (el) => openTab(q.id, el, index));
+    dom.style.backgroundImage = `url(/img/assets/${q.name}.png`;
+});
 
 function init() {
     loadLS();
@@ -57,13 +57,11 @@ function setStatus() {
 let openMethod = 0;
 const selectMethod = document.querySelector("#openMethod div");
 const options = document.querySelectorAll("#openMethod option");
-document
-    .querySelector("#openMethod select")
-    .addEventListener("change", (el) => {
-        openMethod = el.target.selectedIndex;
-        selectMethod.innerText = options[openMethod].text;
-        localStorage.setItem("openMethod", openMethod);
-    });
+document.querySelector("#openMethod select").addEventListener("change", (el) => {
+    openMethod = el.target.selectedIndex;
+    selectMethod.innerText = options[openMethod].text;
+    localStorage.setItem("openMethod", openMethod);
+});
 
 //reset
 document.getElementById("reset").addEventListener("click", () => {
