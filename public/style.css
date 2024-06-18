@@ -1,11 +1,16 @@
 body {
-    width: 100vw;
+    width: min-content;
     height: calc(100vh - 68px);
     margin: auto;
     margin-top: 7px;
     font-family: basic;
     position: fixed;
     background-color: #150f0f;
+}
+@media screen and (max-width: 634px) {
+    body {
+        width: 100vw;
+    }
 }
 #body {
     height: calc(100vh - 40px);
@@ -26,13 +31,13 @@ body {
 
 #head {
     position: relative;
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     left: 10px;
 }
 #openMethod {
     background-image: url(/img/button-s0665b20140.png);
-    background-position: 0px -1098px;
+    background-position: 0px -1096px;
     background-size: 230px 3002px;
     width: 198px;
     height: 33px;
@@ -103,14 +108,9 @@ button:active {
     background-position: 0 -2392px;
     background-size: 303px 2780px;
     position: relative;
-    right: 30px;
-    top: 4px;
+    right: 32px;
+    top: 5px;
     margin-left: auto;
-}
-@media screen and (min-width: 535px) {
-    #reset {
-        margin-left: 300px;
-    }
 }
 
 /* ii-2 */
