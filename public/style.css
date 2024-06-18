@@ -172,3 +172,10 @@ ad {
     bottom: 0;
     z-index: -100;
 }
+
+ad {
+    font-family: basic;
+    position: absolute;
+    bottom: 0;
+    z-index: -100;
+}
