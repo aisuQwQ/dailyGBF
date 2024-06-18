@@ -1,11 +1,16 @@
 body {
-    width: 100vw;
+    width: min-content;
     height: calc(100vh - 68px);
     margin: auto;
     margin-top: 7px;
     font-family: basic;
     position: fixed;
     background-color: #150f0f;
+}
+@media screen and (max-width: 634px) {
+    body {
+        width: 100vw;
+    }
 }
 #body {
     height: calc(100vh - 40px);
@@ -15,7 +20,7 @@ body {
     position: relative;
     top: -40px;
     overflow-x: auto;
-    border-image: url(https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/ui/module/bg.png?1511244036) 74 17 fill;
+    border-image: url(/img/bg.png) 74 17 fill;
     border-width: 50px 17px;
     border-style: solid;
     z-index: -1;
@@ -26,13 +31,13 @@ body {
 
 #head {
     position: relative;
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     left: 10px;
 }
 #openMethod {
-    background-image: url(https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img/sp/ui/button-s92326793c2.png);
-    background-position: 0px -1088px;
+    background-image: url(/img/button-s0665b20140.png);
+    background-position: 0px -1096px;
     background-size: 230px 3002px;
     width: 198px;
     height: 33px;
@@ -53,6 +58,20 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+}
+#premium {
+    position: relative;
+    margin-left: 8px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: url(https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img/sp/mypage/btn-s761bcbf7bb.png);
+    background-position: 0 -3366px;
+    background-size: 140px 3547px;
+}
+#premium.no {
+    filter: grayscale(100%);
 }
 
 button {
@@ -87,10 +106,10 @@ button:active {
     scale: 95%;
     bottom: 0px;
 }
-.done {
+button.done {
     filter: grayscale(100%);
 }
-.done:hover {
+button.done:hover {
     filter: grayscale(100%);
     cursor: auto;
 }
@@ -99,18 +118,13 @@ button:active {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-image: url(https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/quest/assist/parts-s039b76b2d7.png);
+    background-image: url(/img/parts-s039b76b2d7.png);
     background-position: 0 -2392px;
     background-size: 303px 2780px;
     position: relative;
-    right: 30px;
-    top: 4px;
+    right: 32px;
+    top: 5px;
     margin-left: auto;
-}
-@media screen and (min-width: 535px) {
-    #reset {
-        margin-left: 300px;
-    }
 }
 
 /* ii-2 */
@@ -121,7 +135,7 @@ button:active {
     margin-left: auto;
     width: 20px;
     height: 20px;
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/atlas/raid_ui_6.png);
+    background-image: url(/img/raid_ui_6.png);
     z-index: 2;
     background-position: -31px -765px;
     background-size: 1024px 1024px;
@@ -130,94 +144,33 @@ button:active {
     background-position: -5px -765px;
 }
 
-#atum {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900008000_high.png);
+.dif > button {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
 }
-#tefnut {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900013000_high.png);
+.limit {
+    position: relative;
+    margin-left: -7px;
+    top: 0px;
+    right: -2px;
+    width: 20px;
+    height: 20px;
+    background-image: url(/img/raid_ui_6.png);
+    z-index: 2;
+    background-position: -31px -765px;
+    background-size: 1024px 1024px;
+    scale: 0.7;
 }
-#bennu {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900007000_high.png);
-}
-#ra {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900014000_high.png);
-}
-#horus {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900006000_high.png);
-}
-#osiris {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900005000_high.png);
-}
-
-/* v */
-#wilnas {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2040354000_high.png);
-}
-#wamdus {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2040355000_high.png);
-}
-#galleon {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2040356000_high.png);
-}
-#ewiyar {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2040357000_high.png);
-}
-#luwoh {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2040358000_high.png);
-}
-#fediel {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2040359000_high.png);
-}
-/* vi */
-#tuyo {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040128000_hell.png);
-}
-#akasha {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040308000_high.png);
-}
-#grande {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040065000_high.png);
-}
-#ult {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040223000_high.png);
-}
-/* viii */
-#mugen {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900012000_high.png);
-}
-#diaspora {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900011000_high.png);
-}
-#siegfried {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900015000_high.png);
-}
-#seofon {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900017000_high.png);
-}
-#cosmos {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900018000_high.png);
-}
-#agastia {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets_en/img/sp/assets/summon/qm/2900016000_high.png);
+.limit.done {
+    background-position: -5px -765px;
 }
 
-#島HARD {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2030000000_hard.png);
-}
-#マグナ {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040020000_ex.png);
-}
-#マグナHL {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040020000_high.png);
-}
-#プライマル {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/qm/2040021000_ex.png);
-}
-#討滅戦 {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/quest/assets/2040016000_maniac.png);
-}
-#撃滅戦 {
-    background-image: url(https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/quest/assets/2040194000_maniac.png);
+ad {
+    font-family: basic;
+    position: absolute;
+    bottom: 0;
+    z-index: -100;
 }
 
 ad {

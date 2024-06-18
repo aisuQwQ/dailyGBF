@@ -2,21 +2,51 @@ const url = "https://game.granbluefantasy.jp/#quest/supporter";
 import { questList } from "./list.js";
 
 let quests = JSON.parse(JSON.stringify(questList));
-//Add EventListener
-for (let i = 0; i < quests.length; ++i) {
-    const q = quests[i];
-    document
-        .getElementById(q.name)
-        .addEventListener("click", (el) => openTab(q.id, el, i));
-}
+let premium = "normal";
+
+const premiumDOM = document.querySelector("#premium");
+premiumDOM.addEventListener("click", (ele) => {
+    ele.target.classList.toggle("no");
+    const l = ele.target.classList.length;
+    localStorage.setItem("premium", l);
+    quests.forEach((quest) => {
+        quest.remain += [1, -1][l];
+    });
+    window.location.reload();
+});
 
 function init() {
     loadLS();
-    setStatus();
+    const p = localStorage.getItem("premium") | 0;
+    if (p == 0) {
+        premium = "premium";
+    } else {
+        premium = "normal";
+        document.querySelector("#premium").classList.add("no");
+    }
+
+    questList.forEach((quest) => {
+        quest.remain = quest[premium];
+        console.log(quest.name, quest.remain);
+    });
 
     openMethod = localStorage.getItem("openMethod") | 0;
     selectMethod.innerText = options[openMethod].text;
     options[openMethod].selected = true;
+
+    //Add EventListener
+    quests.forEach((q, index) => {
+        const dom = document.getElementById(q.name);
+
+        dom.addEventListener("click", (el) => openTab(q.id, el, index));
+        dom.style.backgroundImage = `url(/img/assets/${q.name}.png`;
+        for (let i = 1; i < q[premium]; ++i) {
+            const limit = document.createElement("div");
+            limit.className = "limit";
+            dom.appendChild(limit);
+        }
+    });
+    setStatus();
 }
 
 //strage
@@ -39,31 +69,25 @@ function setStatus() {
     document.querySelectorAll(".done").forEach((el) => {
         el.classList.remove("done");
     });
-    document.querySelectorAll(".once").forEach((el) => {
-        el.classList.remove("once");
-    });
-    const buttons = document.querySelectorAll(".dif button");
-    for (let i = 0; i < buttons.length; i++) {
-        if (quests[i].remain == 1) {
-            buttons[i].classList.add("once");
-        } else if (quests[i].remain == 0) {
-            buttons[i].classList.add("done");
-            buttons[i].classList.add("once");
+
+    quests.forEach((quest) => {
+        const button = document.querySelector(`#${quest.name}`);
+        for (let i = 0; i < quest[premium] - quest.remain; ++i) {
+            const limit = button.querySelector(".limit:not(.done)");
+            if (limit !== null) limit.classList.add("done");
         }
-    }
+    });
 }
 
 //select
 let openMethod = 0;
 const selectMethod = document.querySelector("#openMethod div");
 const options = document.querySelectorAll("#openMethod option");
-document
-    .querySelector("#openMethod select")
-    .addEventListener("change", (el) => {
-        openMethod = el.target.selectedIndex;
-        selectMethod.innerText = options[openMethod].text;
-        localStorage.setItem("openMethod", openMethod);
-    });
+document.querySelector("#openMethod select").addEventListener("change", (el) => {
+    openMethod = el.target.selectedIndex;
+    selectMethod.innerText = options[openMethod].text;
+    localStorage.setItem("openMethod", openMethod);
+});
 
 //reset
 document.getElementById("reset").addEventListener("click", () => {
@@ -84,25 +108,25 @@ function openTab(id, el, number) {
     }
 
     const q = quests[number];
-    if (q.remain == 2) {
-        q.remain--;
-        el.target.classList.add("once");
-    } else if (q.remain == 1) {
-        q.remain--;
+    const limit = el.target.querySelector(".limit:not(.done)");
+    if (limit === null) {
         el.target.classList.add("done");
+    } else {
+        limit.classList.add("done");
     }
+    if (q.remain > 0) q.remain--;
     setLS();
 }
 
 //can play 2 times
-document.querySelectorAll("#ii-2 button").forEach((el) => {
-    el.classList.add("twice");
-});
-document.querySelectorAll(".twice").forEach((el) => {
-    const div = document.createElement("div");
-    div.className = "twiceFlag";
-    el.appendChild(div);
-});
+// document.querySelectorAll("#ii-2 button").forEach((el) => {
+//     el.classList.add("twice");
+// });
+// document.querySelectorAll(".twice").forEach((el) => {
+//     const div = document.createElement("div");
+//     div.className = "twiceFlag";
+//     el.appendChild(div);
+// });
 
 //mobile tap effect
 document.querySelectorAll("button").forEach((el) => {
