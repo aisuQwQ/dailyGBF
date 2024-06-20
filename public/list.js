@@ -10,8 +10,8 @@ export const questList = [
     { premium: 4, normal: 3, remain: 3, name: "aura", id: "/305601/1/0/525" },
     { premium: 4, normal: 3, remain: 3, name: "ira", id: "/305611/1/0/522" },
     { premium: 4, normal: 3, remain: 3, name: "mare", id: "/305631/1/0/523" },
-    { premium: 4, normal: 3, remain: 3, name: "arbos", id: "/305641/1/0/526" },
-    { premium: 4, normal: 3, remain: 3, name: "credo", id: "/305591/1/0/524" },
+    { premium: 4, normal: 3, remain: 3, name: "arbos", id: "/305641/1/0/524" },
+    { premium: 4, normal: 3, remain: 3, name: "credo", id: "/305591/1/0/526" },
     { premium: 4, normal: 3, remain: 3, name: "ater", id: "/305621/1/0/527" },
     //六龍
     { premium: 2, normal: 1, remain: 1, name: "wilnas", id: "/305191/1/0/41" },
