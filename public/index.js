@@ -72,10 +72,13 @@ function setStatus() {
 
     quests.forEach((quest) => {
         const button = document.querySelector(`#${quest.name}`);
+        //limitの更新
         for (let i = 0; i < quest[premium] - quest.remain; ++i) {
             const limit = button.querySelector(".limit:not(.done)");
             if (limit !== null) limit.classList.add("done");
         }
+        //灰色化
+        if (quest.remain == 0) button.classList.add("done");
     });
 }
 
