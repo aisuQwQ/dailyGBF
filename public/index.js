@@ -4,6 +4,7 @@ import { questList } from "./list.js";
 let quests = JSON.parse(JSON.stringify(questList));
 let premium = "normal";
 
+//
 const premiumDOM = document.querySelector("#premium");
 premiumDOM.addEventListener("click", (ele) => {
     ele.target.classList.toggle("no");
@@ -17,9 +18,11 @@ premiumDOM.addEventListener("click", (ele) => {
 
 function init() {
     loadLS();
-    const p = localStorage.getItem("premium") | 0;
+    let p = localStorage.getItem("premium");
+    if (p == null) p = 1;
     if (p == 0) {
         premium = "premium";
+        document.querySelector("#premium").classList.remove("no");
     } else {
         premium = "normal";
         document.querySelector("#premium").classList.add("no");
@@ -27,7 +30,6 @@ function init() {
 
     questList.forEach((quest) => {
         quest.remain = quest[premium];
-        console.log(quest.name, quest.remain);
     });
 
     openMethod = localStorage.getItem("openMethod") | 0;
@@ -47,6 +49,7 @@ function init() {
         }
     });
     setStatus();
+    timemanage();
 }
 
 //strage
@@ -93,11 +96,12 @@ document.querySelector("#openMethod select").addEventListener("change", (el) => 
 });
 
 //reset
-document.getElementById("reset").addEventListener("click", () => {
+document.getElementById("reset").addEventListener("click", reset);
+function reset() {
     quests = JSON.parse(JSON.stringify(questList));
     setStatus();
     setLS();
-});
+}
 
 let tab;
 function openTab(id, el, number) {
@@ -121,19 +125,28 @@ function openTab(id, el, number) {
     setLS();
 }
 
-//can play 2 times
-// document.querySelectorAll("#ii-2 button").forEach((el) => {
-//     el.classList.add("twice");
-// });
-// document.querySelectorAll(".twice").forEach((el) => {
-//     const div = document.createElement("div");
-//     div.className = "twiceFlag";
-//     el.appendChild(div);
-// });
-
 //mobile tap effect
 document.querySelectorAll("button").forEach((el) => {
     el.ontouchstart = () => {};
 });
 
 init();
+
+function timemanage() {
+    const DAY = 3600 * 24 * 1000;
+    const TZ = 3600 * 4 * 1000;
+    const now = Date.now();
+    const date = Math.floor((now + TZ) / DAY);
+    const LSdate = parseInt(localStorage.getItem("date")) || date;
+
+    if (date > LSdate) {
+        reset();
+    }
+
+    localStorage.setItem("date", date);
+}
+document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+        timemanage();
+    }
+});
