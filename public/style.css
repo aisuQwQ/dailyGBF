@@ -66,7 +66,7 @@ body {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: url(https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img/sp/mypage/btn-s761bcbf7bb.png);
+    background: url(/img/btn-s761bcbf7bb.png);
     background-position: 0 -3366px;
     background-size: 140px 3547px;
 }
