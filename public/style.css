@@ -6,6 +6,7 @@ body {
     font-family: basic;
     position: fixed;
     background-color: #150f0f;
+    user-select: none;
 }
 @media screen and (max-width: 634px) {
     body {
