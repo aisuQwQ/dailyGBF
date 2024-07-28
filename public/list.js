@@ -13,6 +13,13 @@ export const questList = [
     { premium: 4, normal: 3, remain: 3, name: "arbos", id: "/305641/1/0/524" },
     { premium: 4, normal: 3, remain: 3, name: "credo", id: "/305591/1/0/526" },
     { premium: 4, normal: 3, remain: 3, name: "ater", id: "/305621/1/0/527" },
+    //フリクエ六竜
+    { premium: 2, normal: 2, remain: 2, name: "fwilnas", id: "/103441/3" },
+    { premium: 2, normal: 2, remain: 2, name: "fwamdus", id: "/103451/3" },
+    { premium: 2, normal: 2, remain: 2, name: "fgalleon", id: "/103461/3" },
+    { premium: 2, normal: 2, remain: 2, name: "fewiyar", id: "/103471/3" },
+    { premium: 2, normal: 2, remain: 2, name: "fluwoh", id: "/103481/3" },
+    { premium: 2, normal: 2, remain: 2, name: "ffediel", id: "/103491/3" },
     //六龍
     { premium: 2, normal: 1, remain: 1, name: "wilnas", id: "/305191/1/0/41" },
     { premium: 2, normal: 1, remain: 1, name: "wamdus", id: "/305201/1/0/42" },

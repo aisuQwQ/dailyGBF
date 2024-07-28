@@ -54,7 +54,7 @@ function init() {
 
 //strage
 function loadLS() {
-    if (localStorage.quests == undefined) {
+    if (localStorage.quests.length != JSON.stringify(questList).length) {
         //first visit
         const json = JSON.stringify(questList);
         localStorage.setItem("quests", json);
@@ -149,4 +149,8 @@ document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") {
         timemanage();
     }
+});
+
+document.querySelector("#body").addEventListener("mousemove", (event) => {
+    if (event.buttons == 1) event.target.scrollLeft -= event.movementX;
 });
