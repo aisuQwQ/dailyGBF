@@ -165,10 +165,3 @@ button.done:hover {
 .limit.done {
     background-position: -5px -765px;
 }
-
-ad {
-    font-family: basic;
-    position: absolute;
-    bottom: 0;
-    z-index: -100;
-}
