@@ -150,3 +150,7 @@ document.addEventListener("visibilitychange", () => {
         timemanage();
     }
 });
+
+document.querySelector("#body").addEventListener("mousemove", (event) => {
+    if (event.buttons == 1) event.target.scrollLeft -= event.movementX;
+});
