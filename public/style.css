@@ -8,7 +8,7 @@ body {
     background-color: #150f0f;
     user-select: none;
 }
-@media screen and (max-width: 634px) {
+@media screen and (max-width: 734px) {
     body {
         width: 100vw;
     }
