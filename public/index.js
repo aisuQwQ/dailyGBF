@@ -54,7 +54,7 @@ function init() {
 
 //strage
 function loadLS() {
-    if (localStorage.quests.length != JSON.stringify(questList).length) {
+    if (localStorage.quests == null || localStorage.quests.length != JSON.stringify(questList).length) {
         //first visit
         const json = JSON.stringify(questList);
         localStorage.setItem("quests", json);
